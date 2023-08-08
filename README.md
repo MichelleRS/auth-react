@@ -1,8 +1,22 @@
-# React + Vite
+# Auth with React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## MVP Goal
 
-Currently, two official plugins are available:
+Authorized users can access the home page.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Planning
+
+### Components
+
+- Header/
+  - Header.jsx
+- Main/
+  - Auth/
+    - Auth.jsx (send here if not signed in)
+    - AuthToolbar.jsx
+    - SignIn.jsx
+    - SignUp.jsx
+  - Home/
+    - Home.jsx (send here if signed in)
+- Footer/
+  - Footer.jsx
