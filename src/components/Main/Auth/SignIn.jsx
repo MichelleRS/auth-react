@@ -11,11 +11,23 @@ export default function SignIn() {
       <h2>Sign In</h2>
       <form onSubmit={handleSubmit}>
         {/* email */}
-        <label htmlFor="email">Email</label>
-        <input type="email" id="signInEmail" />
+        <label htmlFor="signInEmail">Email</label>
+        <input
+          type="email"
+          id="signInEmail"
+          name="signInEmail"
+          autoComplete="email"
+          required
+        />
         {/* password */}
-        <label htmlFor="password">Password</label>
-        <input type="password" id="signInPassword" />
+        <label htmlFor="signInPassword">Password</label>
+        <input
+          type="password"
+          id="signInPassword"
+          name="signInPassword"
+          autoComplete="off"
+          required
+        />
         {/* submit */}
         <button type="submit">Submit</button>
       </form>
