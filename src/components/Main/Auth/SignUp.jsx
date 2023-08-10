@@ -7,15 +7,18 @@ export default function SignUp() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      {/* email */}
-      <label htmlFor="email">Email</label>
-      <input type="email" id="signUpEmail" />
-      {/* password */}
-      <label htmlFor="password">Password</label>
-      <input type="password" id="signUpPassword" />
-      {/* submit */}
-      <button type="submit">Submit</button>
-    </form>
+    <>
+      <h2>Sign Up</h2>
+      <form onSubmit={handleSubmit}>
+        {/* email */}
+        <label htmlFor="email">Email</label>
+        <input type="email" id="signUpEmail" />
+        {/* password */}
+        <label htmlFor="password">Password</label>
+        <input type="password" id="signUpPassword" />
+        {/* submit */}
+        <button type="submit">Submit</button>
+      </form>
+    </>
   );
 }
