@@ -1,10 +1,26 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 export default function AuthToolbar() {
   return (
     <>
-      <Link to="/sign-in">Sign In</Link>
-      <Link to="/sign-up">Sign Up</Link>
+      <NavLink
+        to="/sign-in"
+        // TODO move to css
+        style={({ isActive }) => ({
+          color: isActive ? "green" : "blue",
+        })}
+      >
+        Sign In
+      </NavLink>
+      <NavLink
+        to="/sign-up"
+        // TODO move to css
+        style={({ isActive }) => ({
+          color: isActive ? "green" : "blue",
+        })}
+      >
+        Sign Up
+      </NavLink>
     </>
   );
 }
