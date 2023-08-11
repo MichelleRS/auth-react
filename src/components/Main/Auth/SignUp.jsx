@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+
 export default function SignUp() {
   // TODO state
 
@@ -5,6 +7,13 @@ export default function SignUp() {
   const handleSubmit = () => {
     console.log("I pressed the submit button to sign up!!");
   };
+
+  // ISSUE: "Hello" message is logging twice in developer mode.
+  // TEST: Does it log twice when deployed?
+  useEffect(() => {
+    console.log("Hello from useEffect - sign up!!");
+    document.title = "React Auth Template - Sign Up";
+  }, []);
 
   return (
     <>
