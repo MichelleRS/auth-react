@@ -5,8 +5,12 @@ const AuthContext = createContext({});
 
 export const useAuth = () => useContext(AuthContext);
 
+// sign in user
 const signin = (email, password) =>
   client.auth.signInWithPassword({ email, password });
+
+// sign out user
+const signOut = () => client.auth.signOut();
 
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
@@ -22,6 +26,11 @@ const AuthProvider = ({ children }) => {
         setUser(session.user);
         setAuth(true);
       }
+      // if signed out, update user state and set auth state to false
+      else if (event === "SIGNED_OUT") {
+        setUser(null);
+        setAuth(false);
+      }
     });
     return () => {
       // unsubscribe to the auth listener
@@ -30,7 +39,7 @@ const AuthProvider = ({ children }) => {
   }, []);
 
   return (
-    <AuthContext.Provider value={{ user, auth, signin }}>
+    <AuthContext.Provider value={{ user, auth, signin, signOut }}>
       {children}
     </AuthContext.Provider>
   );
