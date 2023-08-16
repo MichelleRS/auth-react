@@ -1,17 +1,40 @@
+import { useRef } from "react";
 import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../../context/AuthContext.jsx";
 
 export default function SignIn() {
-  // TODO state
+  // constants for use in function
+  const emailRef = useRef(null);
+  const passwordRef = useRef(null);
+  const navigate = useNavigate();
+  const { signin } = useAuth();
 
-  // handle form submit
-  const handleSubmit = () => {
-    console.log("I pressed the submit button to sign in!!");
-  };
+  // TODO initialize state for error handling
 
   // set document title
   useEffect(() => {
     document.title = "React Auth Template - Sign In";
   }, []);
+
+  // TODO send users to home page
+
+  // handle form submit
+  const handleSubmit = async (e) => {
+    console.log("I pressed the submit button to sign in!!");
+    e.preventDefault();
+    try {
+      // TODO error handling
+
+      // sign in user and navigate to home page
+      const {
+        data: { user, session },
+      } = await signin(emailRef.current.value, passwordRef.current.value);
+      if (user && session) navigate("/");
+    } catch {
+      // TODO error message
+    }
+  };
 
   return (
     <>
@@ -24,6 +47,7 @@ export default function SignIn() {
           id="signInEmail"
           name="signInEmail"
           autoComplete="email"
+          ref={emailRef}
           required
         />
         {/* password */}
@@ -33,6 +57,7 @@ export default function SignIn() {
           id="signInPassword"
           name="signInPassword"
           autoComplete="off"
+          ref={passwordRef}
           required
         />
         {/* submit */}
