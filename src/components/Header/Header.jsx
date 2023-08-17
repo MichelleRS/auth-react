@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext.jsx";
+import AuthToolbar from "../Main/Auth/AuthToolbar.jsx";
 
 export default function Header() {
   const { user, signOut } = useAuth();
@@ -23,6 +24,8 @@ export default function Header() {
           Sign Out
         </Link>
       )}
+      {/* if not a user, render AuthToolbar */}
+      {!user && <AuthToolbar />}
     </header>
   );
 }
