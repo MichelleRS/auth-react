@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext.jsx";
-import AuthToolbar from "../Main/Auth/AuthToolbar.jsx";
+import AuthToolbar from "../Main/Public/AuthToolbar.jsx";
 
 export default function Header() {
   const { user, signOut } = useAuth();
