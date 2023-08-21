@@ -1,5 +1,4 @@
-import { useRef } from "react";
-import { useEffect } from "react";
+import { useRef, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../../context/AuthContext.jsx";
 
@@ -7,6 +6,9 @@ export default function SignIn() {
   // constants for use in function
   const emailRef = useRef(null);
   const passwordRef = useRef(null);
+  const [emailErrorMsg, setEmailErrorMsg] = useState("");
+  const [passwordErrorMsg, setPasswordErrorMsg] = useState("");
+  const [errorMsg, setErrorMsg] = useState("");
   const navigate = useNavigate();
   const { signin } = useAuth();
 
@@ -24,15 +26,29 @@ export default function SignIn() {
     console.log("I pressed the submit button to sign in!!");
     e.preventDefault();
     try {
-      // TODO error handling
-
+      // clear error messages
+      setEmailErrorMsg("");
+      setPasswordErrorMsg("");
+      setErrorMsg("");
+      // handle empty email input
+      if (!emailRef.current?.value) {
+        setEmailErrorMsg("Email is required.");
+      }
+      // handle empty password input
+      if (!passwordRef.current?.value) {
+        setPasswordErrorMsg("Password is required.");
+      }
+      // handle general error message
+      if (!emailRef.current?.value || !passwordRef.current?.value) {
+        setErrorMsg("Failed to sign in.");
+      }
       // sign in user and navigate to home page
       const {
         data: { user, session },
       } = await signin(emailRef.current.value, passwordRef.current.value);
       if (user && session) navigate("/");
     } catch {
-      // TODO error message
+      // TODO catch remaining errors
     }
   };
 
@@ -48,8 +64,11 @@ export default function SignIn() {
           name="signInEmail"
           autoComplete="email"
           ref={emailRef}
-          required
+          // comment out for error message testing
+          // required
         />
+        {/* if blank or incorrect on submit, display password error message */}
+        {emailErrorMsg}
         {/* password */}
         <label htmlFor="signInPassword">Password</label>
         <input
@@ -58,8 +77,13 @@ export default function SignIn() {
           name="signInPassword"
           autoComplete="off"
           ref={passwordRef}
-          required
+          // comment out for error message testing
+          // required
         />
+        {/* if blank or incorrect on submit, display password error message */}
+        {passwordErrorMsg}
+        {/* if any errors on submit, display error message */}
+        <p>{errorMsg}</p>
         {/* submit */}
         <button type="submit">Submit</button>
       </form>
