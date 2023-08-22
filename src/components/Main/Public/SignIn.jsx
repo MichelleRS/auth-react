@@ -89,9 +89,11 @@ export default function SignIn() {
         {/* if blank or incorrect on submit, display password error message */}
         {passwordErrorMsg}
         {/* if any errors on submit, display error message */}
-        <p>
-          {submitStatusMsg} {errorMsg}.
-        </p>
+        {errorMsg && (
+          <p>
+            {submitStatusMsg} {errorMsg}.
+          </p>
+        )}
         {/* submit */}
         <button type="submit">Submit</button>
       </form>
