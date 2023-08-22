@@ -6,13 +6,13 @@ export default function SignIn() {
   // constants for use in function
   const emailRef = useRef(null);
   const passwordRef = useRef(null);
-  const [emailErrorMsg, setEmailErrorMsg] = useState("");
-  const [passwordErrorMsg, setPasswordErrorMsg] = useState("");
-  const [errorMsg, setErrorMsg] = useState("");
   const navigate = useNavigate();
   const { signin } = useAuth();
-
-  // TODO initialize state for error handling
+  // initialize state for error handling
+  const [emailErrorMsg, setEmailErrorMsg] = useState("");
+  const [passwordErrorMsg, setPasswordErrorMsg] = useState("");
+  const [submitStatusMsg, setSubmitStatusMsg] = useState("");
+  const [errorMsg, setErrorMsg] = useState("");
 
   // set document title
   useEffect(() => {
@@ -29,6 +29,7 @@ export default function SignIn() {
       // clear error messages
       setEmailErrorMsg("");
       setPasswordErrorMsg("");
+      setSubmitStatusMsg("");
       setErrorMsg("");
       // handle empty email input
       if (!emailRef.current?.value) {
@@ -38,17 +39,22 @@ export default function SignIn() {
       if (!passwordRef.current?.value) {
         setPasswordErrorMsg("Password is required.");
       }
-      // handle general error message
+      // handle general error message on submit
       if (!emailRef.current?.value || !passwordRef.current?.value) {
-        setErrorMsg("Failed to sign in.");
+        setSubmitStatusMsg("Failed to sign in.");
       }
-      // sign in user and navigate to home page
+      // get sign in data
       const {
         data: { user, session },
+        error,
       } = await signin(emailRef.current.value, passwordRef.current.value);
+      // if error, display error message, TODO improve message
+      if (error) setErrorMsg(error.message);
+      // if user, navigate to home page
       if (user && session) navigate("/");
-    } catch {
+    } catch (error) {
       // TODO catch remaining errors
+      console.log("error!");
     }
   };
 
@@ -83,7 +89,9 @@ export default function SignIn() {
         {/* if blank or incorrect on submit, display password error message */}
         {passwordErrorMsg}
         {/* if any errors on submit, display error message */}
-        <p>{errorMsg}</p>
+        <p>
+          {submitStatusMsg} {errorMsg}.
+        </p>
         {/* submit */}
         <button type="submit">Submit</button>
       </form>
