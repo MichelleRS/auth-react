@@ -22,6 +22,7 @@ export default function SignIn() {
   // TODO send users to home page
 
   // handle form submit
+  // TODO handle focus
   const handleSubmit = async (e) => {
     console.log("I pressed the submit button to sign in!!");
     e.preventDefault();
@@ -70,11 +71,11 @@ export default function SignIn() {
           name="signInEmail"
           autoComplete="email"
           ref={emailRef}
-          // comment out for error message testing
-          // required
+          aria-describedby="emailError"
+          aria-required="true"
         />
-        {/* if blank or incorrect on submit, display password error message */}
-        {emailErrorMsg}
+        {/* if blank submit, display password error message */}
+        {!emailRef.current?.value && <div id="emailError">{emailErrorMsg}</div>}
         {/* password */}
         <label htmlFor="signInPassword">Password</label>
         <input
@@ -83,14 +84,17 @@ export default function SignIn() {
           name="signInPassword"
           autoComplete="off"
           ref={passwordRef}
-          // comment out for error message testing
-          // required
+          aria-describedby="passwordError"
+          aria-required="true"
         />
-        {/* if blank or incorrect on submit, display password error message */}
-        {passwordErrorMsg}
-        {/* if any errors on submit, display error message */}
+        {/* if blank on submit, display password error message */}
+        {!passwordRef.current?.value && (
+          <div id="passwordError">{passwordErrorMsg}</div>
+        )}
+        {/* if any errors on submit, display and announce error message */}
         {errorMsg && (
-          <p>
+          // aria-live="assertive": announces message on submit
+          <p aria-live="assertive">
             {submitStatusMsg} {errorMsg}.
           </p>
         )}
