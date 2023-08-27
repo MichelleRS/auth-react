@@ -1,5 +1,5 @@
 import { useRef, useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 import { useAuth } from "../../../context/AuthContext.jsx";
 
 export default function SignIn() {
@@ -19,7 +19,11 @@ export default function SignIn() {
     document.title = "React Auth Template - Sign In";
   }, []);
 
-  // TODO send users to home page
+  // send users to home page
+  const { user } = useAuth();
+  if (user) {
+    return <Navigate to="/" />;
+  }
 
   // handle form submit
   // TODO handle focus
