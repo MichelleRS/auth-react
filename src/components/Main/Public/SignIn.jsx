@@ -39,15 +39,15 @@ export default function SignIn() {
       setErrorMsg("");
       // handle empty email input
       if (!emailRef.current?.value) {
-        setEmailErrorMsg("Email is required.");
+        setEmailErrorMsg("Enter your email address.");
       }
       // handle empty password input
       if (!passwordRef.current?.value) {
-        setPasswordErrorMsg("Password is required.");
+        setPasswordErrorMsg("Enter your password.");
       }
       // handle general error message on submit
       if (!emailRef.current?.value || !passwordRef.current?.value) {
-        setSubmitStatusMsg("Failed to sign in.");
+        setSubmitStatusMsg("Unable to sign in.");
       }
       // get sign in data
       const {
@@ -55,7 +55,7 @@ export default function SignIn() {
         error,
       } = await signin(emailRef.current.value, passwordRef.current.value);
       // if error, display error message, TODO improve message
-      if (error) setErrorMsg(error.message);
+      if (error) setErrorMsg("Check form for errors.");
       // if user, navigate to home page
       if (user && session) navigate("/");
     } catch (error) {
@@ -84,7 +84,9 @@ export default function SignIn() {
             />
             {/* if blank submit, display password error message */}
             {!emailRef.current?.value && (
-              <div id="emailError">{emailErrorMsg}</div>
+              <div id="emailError" className="errorMsg">
+                {emailErrorMsg}
+              </div>
             )}
           </div>
           {/* password */}
@@ -102,7 +104,9 @@ export default function SignIn() {
             />
             {/* if blank on submit, display password error message */}
             {!passwordRef.current?.value && (
-              <div id="passwordError">{passwordErrorMsg}</div>
+              <div id="passwordError" className="errorMsg">
+                {passwordErrorMsg}
+              </div>
             )}
           </div>
         </div>
@@ -112,7 +116,7 @@ export default function SignIn() {
           {errorMsg && (
             // aria-live="assertive": announces message on submit
             <p aria-live="assertive">
-              {submitStatusMsg} {errorMsg}.
+              {submitStatusMsg} {errorMsg}
             </p>
           )}
         </div>

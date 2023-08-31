@@ -35,18 +35,16 @@ export default function SignUp() {
       setErrorSummary("");
       // handle empty email input
       if (!emailRef.current?.value) {
-        setEmailErrorMsg("Email field is blank. Enter an email address");
+        setEmailErrorMsg("Enter your email address.");
       }
       // handle empty password input
       if (!passwordRef.current?.value) {
-        setPasswordErrorMsg(
-          "Password field is blank. Enter a password of 6 characters or more."
-        );
+        setPasswordErrorMsg("Enter a password of 6 characters or more.");
       }
       // TODO handle password length less than 6 characters
       // handle error summary
       if (!emailRef.current?.value || !passwordRef.current?.value) {
-        setErrorSummary("Failed to sign up.");
+        setErrorSummary("Unable to create an account. Check form for errors.");
       }
       // handle valid entries and sign up user
       const { data, error } = await register(
@@ -82,12 +80,16 @@ export default function SignUp() {
             />
             {/* if email blank, display email error message element */}
             {!emailRef.current?.value && (
-              <div id="emailError">{emailErrorMsg}</div>
+              <div id="emailError" className="errorMsg">
+                {emailErrorMsg}
+              </div>
             )}
           </div>
           {/* password */}
           <div className="authControl">
-            <label htmlFor="signUpPassword">Password</label>
+            <label htmlFor="signUpPassword">
+              Choose a password with at least 6 characters
+            </label>
             <input
               type="password"
               id="signUpPassword"
@@ -100,7 +102,9 @@ export default function SignUp() {
             />
             {/* if password blank, display email error message element */}
             {!passwordRef.current?.value && (
-              <div id="passwordError">{passwordErrorMsg}</div>
+              <div id="passwordError" className="errorMsg">
+                {passwordErrorMsg}
+              </div>
             )}
           </div>
         </div>

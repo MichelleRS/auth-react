@@ -12,14 +12,14 @@ header {
   justify-content: space-between;
   margin-bottom: 20px;
   /* placeholder style */
-  background-color: rgba(51, 153, 255, 0.5);
-  border: 5px navy dashed;
+  /* background-color: rgba(51, 153, 255, 0.5); */
+  /* border: 5px navy dashed; */
 }
 
 /* title container and its header element */
 .headerTitle {
   /* placeholder style */
-  background-color: blue;
+  /* background-color: blue; */
 }
 header > h1 {
   font-size: 50px;
@@ -36,16 +36,16 @@ header > h1 {
   gap: 30px;
   padding: 20px;
   /* placeholder style */
-  background-color: pink;
-  border: 4px navy dotted;
+  /* background-color: pink; */
+  /* border: 4px navy dotted; */
 }
 
 .headerLinksContainer > a.active {
-  color: green;
-  font-weight: bold;
-  border: 2px magenta solid;
+  border: 2px var(--darkNeutral) solid;
 }
 
 .headerLinksContainer > a {
-  color: blue;
+  padding: 1rem;
+  color: var(--darkNeutral);
+  border: 2px transparent solid;
 }
