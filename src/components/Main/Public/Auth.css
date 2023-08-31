@@ -5,8 +5,8 @@
   flex-direction: column;
   align-items: center;
   /* placeholder style */
-  /* border: 5px blue dotted; */
-  /* background-color: rgba(0, 204, 153, 0.75); */
+  border: 5px blue dotted;
+  background-color: rgba(0, 204, 153, 0.75);
 }
 
 .authContainer > h2 {
@@ -88,4 +88,14 @@
   .authControlGroup {
     flex-direction: column;
   }
+}
+
+.authNavLink {
+  padding: 1rem;
+  color: var(--darkNeutral);
+  border: 2px transparent solid;
+}
+
+.authNavLink.active {
+  border: 2px var(--darkNeutral) solid;
 }

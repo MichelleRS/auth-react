@@ -27,7 +27,7 @@ header > h1 {
 }
 
 /* header links container and its link elements */
-.headerLinksContainer {
+.headerNavContainer {
   text-align: center;
   /* center header links vertically in header */
   align-self: center;
@@ -40,11 +40,11 @@ header > h1 {
   /* border: 4px navy dotted; */
 }
 
-.headerLinksContainer > a.active {
+.headerNavContainer > a.active {
   border: 2px var(--darkNeutral) solid;
 }
 
-.headerLinksContainer > a {
+.headerNavContainer > a {
   padding: 1rem;
   color: var(--darkNeutral);
   border: 2px transparent solid;

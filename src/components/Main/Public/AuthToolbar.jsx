@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import "./Auth.css";
 
 export default function AuthToolbar() {
   const handleClick = () => {
@@ -6,10 +7,12 @@ export default function AuthToolbar() {
   };
   return (
     <>
-      <NavLink to="/sign-in" onClick={handleClick}>
+      <NavLink to="/sign-in" onClick={handleClick} className="authNavLink">
         Sign In
       </NavLink>
-      <NavLink to="/sign-up">Sign Up</NavLink>
+      <NavLink to="/sign-up" className="authNavLink">
+        Sign Up
+      </NavLink>
     </>
   );
 }
