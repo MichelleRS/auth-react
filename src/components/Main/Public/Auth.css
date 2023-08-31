@@ -1,0 +1,57 @@
+.authContainer {
+  margin: 0px auto;
+  width: 90%;
+  /* placeholder style */
+  border: 5px blue dotted;
+  background-color: rgba(0, 204, 153, 0.75);
+}
+
+.authContainer > h2 {
+  /* placeholder style */
+  background-color: pink;
+}
+
+.authControlGroup {
+  display: flex;
+  /* placeholder style */
+  background-color: white;
+  border: 5px magenta solid;
+}
+
+.authControl {
+  /* give equal width to .control elements */
+  flex: 1;
+  /* stack display of elements */
+  display: flex;
+  flex-direction: column;
+  padding: 14px 14px;
+  /* placeholder style */
+  background-color: coral;
+  border: 5px purple dashed;
+}
+
+/* style input for spacing between label and error */
+.authInput {
+  margin: 5px 0;
+  /* placeholder style */
+  background-color: cornflowerblue;
+}
+
+.authErrorSummary {
+  /* placeholder style */
+  border: 5px black dotted;
+}
+
+.authSubmitBtn {
+  /* placeholder style */
+  padding: 25px;
+}
+/* responsive form elements */
+@media only screen and (max-width: 550px) {
+  .authContainer {
+    width: 100%;
+  }
+  .authControlGroup {
+    flex-direction: column;
+  }
+}

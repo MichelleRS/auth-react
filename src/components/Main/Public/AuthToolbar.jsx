@@ -6,25 +6,10 @@ export default function AuthToolbar() {
   };
   return (
     <>
-      <NavLink
-        to="/sign-in"
-        onClick={handleClick}
-        // TODO move to css
-        style={({ isActive }) => ({
-          color: isActive ? "green" : "blue",
-        })}
-      >
+      <NavLink to="/sign-in" onClick={handleClick}>
         Sign In
       </NavLink>
-      <NavLink
-        to="/sign-up"
-        // TODO move to css
-        style={({ isActive }) => ({
-          color: isActive ? "green" : "blue",
-        })}
-      >
-        Sign Up
-      </NavLink>
+      <NavLink to="/sign-up">Sign Up</NavLink>
     </>
   );
 }
