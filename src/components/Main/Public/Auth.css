@@ -1,27 +1,48 @@
-.authContainer {
-  margin: 0px auto;
+.authForm {
+  margin: 1rem auto;
   width: 90%;
   display: flex;
   flex-direction: column;
   align-items: center;
   /* placeholder style */
-  border: 5px blue dotted;
-  background-color: rgba(0, 204, 153, 0.75);
+  /* border: 5px blue dotted; */
+  /* background-color: rgba(0, 204, 153, 0.75); */
 }
 
-.authContainer > h2 {
-  margin-bottom: 0.75rem;
+.authContainer {
+  background-color: magenta;
+  display: flex;
+  flex-direction: column;
+}
+
+.authNavLinksContainer {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
   /* placeholder style */
   /* background-color: pink; */
+}
+
+.authNavLink {
+  padding: 1rem;
+  /* margin: 1rem; */
+  color: var(--darkNeutral);
+  border: 2px transparent solid;
+}
+
+.authNavLink.active {
+  border: 2px var(--darkNeutral) solid;
+  font-weight: bold;
+  text-decoration: none;
 }
 
 .authControlGroup {
   display: flex;
   flex-direction: column;
-  /* placeholder style */
-  background-color: var(--lightNeutral);
   padding: 1rem 1.25rem;
-  border: 5px var(--darkNeutral) solid;
+  /* placeholder style */
+  /* background-color: var(--lightNeutral); */
+  /* border: 3px var(--darkNeutral) solid; */
 }
 
 .authControl {
@@ -88,14 +109,4 @@
   .authControlGroup {
     flex-direction: column;
   }
-}
-
-.authNavLink {
-  padding: 1rem;
-  color: var(--darkNeutral);
-  border: 2px transparent solid;
-}
-
-.authNavLink.active {
-  border: 2px var(--darkNeutral) solid;
 }
