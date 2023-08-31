@@ -1,0 +1,51 @@
+/* responsive header elements */
+@media only screen and (max-width: 550px) {
+  header {
+    flex-direction: column;
+  }
+}
+
+/* header container */
+header {
+  display: flex;
+  /* add space between title and header links */
+  justify-content: space-between;
+  margin-bottom: 20px;
+  /* placeholder style */
+  /* background-color: rgba(51, 153, 255, 0.5); */
+  /* border: 5px navy dashed; */
+}
+
+/* title container and its header element */
+.headerTitle {
+  /* placeholder style */
+  /* background-color: blue; */
+}
+header > h1 {
+  font-size: 50px;
+  text-align: left;
+}
+
+/* header links container and its link elements */
+.headerLinksContainer {
+  text-align: center;
+  /* center header links vertically in header */
+  align-self: center;
+  /* display as flex with gap between links */
+  display: flex;
+  gap: 30px;
+  padding: 20px;
+  /* placeholder style */
+  /* background-color: pink; */
+  /* border: 4px navy dotted; */
+}
+
+.headerLinksContainer > a.active {
+  border: 2px var(--darkNeutral) solid;
+}
+
+.headerLinksContainer > a {
+  padding: 1rem;
+  color: var(--darkNeutral);
+  border: 2px transparent solid;
+}

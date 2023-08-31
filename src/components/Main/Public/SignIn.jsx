@@ -1,6 +1,7 @@
 import { useRef, useState, useEffect } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
 import { useAuth } from "../../../context/AuthContext.jsx";
+import "./Auth.css";
 
 export default function SignIn() {
   // constants for use in function
@@ -38,15 +39,15 @@ export default function SignIn() {
       setErrorMsg("");
       // handle empty email input
       if (!emailRef.current?.value) {
-        setEmailErrorMsg("Email is required.");
+        setEmailErrorMsg("Enter your email address.");
       }
       // handle empty password input
       if (!passwordRef.current?.value) {
-        setPasswordErrorMsg("Password is required.");
+        setPasswordErrorMsg("Enter your password.");
       }
       // handle general error message on submit
       if (!emailRef.current?.value || !passwordRef.current?.value) {
-        setSubmitStatusMsg("Failed to sign in.");
+        setSubmitStatusMsg("Unable to sign in.");
       }
       // get sign in data
       const {
@@ -54,7 +55,7 @@ export default function SignIn() {
         error,
       } = await signin(emailRef.current.value, passwordRef.current.value);
       // if error, display error message, TODO improve message
-      if (error) setErrorMsg(error.message);
+      if (error) setErrorMsg("Check form for errors.");
       // if user, navigate to home page
       if (user && session) navigate("/");
     } catch (error) {
@@ -64,47 +65,66 @@ export default function SignIn() {
   };
 
   return (
-    <>
+    <section className="authContainer">
       <h2>Sign In</h2>
       <form onSubmit={handleSubmit}>
-        {/* email */}
-        <label htmlFor="signInEmail">Email</label>
-        <input
-          type="email"
-          id="signInEmail"
-          name="signInEmail"
-          autoComplete="email"
-          ref={emailRef}
-          aria-describedby="emailError"
-          aria-required="true"
-        />
-        {/* if blank submit, display password error message */}
-        {!emailRef.current?.value && <div id="emailError">{emailErrorMsg}</div>}
-        {/* password */}
-        <label htmlFor="signInPassword">Password</label>
-        <input
-          type="password"
-          id="signInPassword"
-          name="signInPassword"
-          autoComplete="off"
-          ref={passwordRef}
-          aria-describedby="passwordError"
-          aria-required="true"
-        />
-        {/* if blank on submit, display password error message */}
-        {!passwordRef.current?.value && (
-          <div id="passwordError">{passwordErrorMsg}</div>
-        )}
-        {/* if any errors on submit, display and announce error message */}
-        {errorMsg && (
-          // aria-live="assertive": announces message on submit
-          <p aria-live="assertive">
-            {submitStatusMsg} {errorMsg}.
-          </p>
-        )}
+        <div className="authControlGroup">
+          {/* email */}
+          <div className="authControl">
+            <label htmlFor="signInEmail">Email</label>
+            <input
+              type="email"
+              id="signInEmail"
+              className="authInput"
+              name="signInEmail"
+              autoComplete="email"
+              ref={emailRef}
+              aria-describedby="emailError"
+              aria-required="true"
+            />
+            {/* if blank submit, display password error message */}
+            {!emailRef.current?.value && (
+              <div id="emailError" className="errorMsg">
+                {emailErrorMsg}
+              </div>
+            )}
+          </div>
+          {/* password */}
+          <div className="authControl">
+            <label htmlFor="signInPassword">Password</label>
+            <input
+              type="password"
+              id="signInPassword"
+              className="authInput"
+              name="signInPassword"
+              autoComplete="off"
+              ref={passwordRef}
+              aria-describedby="passwordError"
+              aria-required="true"
+            />
+            {/* if blank on submit, display password error message */}
+            {!passwordRef.current?.value && (
+              <div id="passwordError" className="errorMsg">
+                {passwordErrorMsg}
+              </div>
+            )}
+          </div>
+        </div>
+        {/* error summary */}
+        <div className="authErrorSummary">
+          {/* if any errors on submit, display and announce error message */}
+          {errorMsg && (
+            // aria-live="assertive": announces message on submit
+            <p aria-live="assertive">
+              {submitStatusMsg} {errorMsg}
+            </p>
+          )}
+        </div>
         {/* submit */}
-        <button type="submit">Submit</button>
+        <button type="submit" className="authSubmitBtn">
+          Submit
+        </button>
       </form>
-    </>
+    </section>
   );
 }
