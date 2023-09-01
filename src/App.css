@@ -1,14 +1,15 @@
 * {
   margin: 0;
   padding: 0;
+  /* solution for child elements displaying outside of parent elements */
+  box-sizing: border-box;
 }
 
 /* app container */
 #root {
-  width: 100%;
+  width: 70%;
   /* center the app container */
   margin: 0 auto;
-  padding: 1.25rem;
   /* placeholder styles */
   background-color: rgba(255, 204, 153, 0.75);
   /* border: magenta 25px dotted; */
@@ -25,10 +26,19 @@ main {
   margin-bottom: 20px;
   display: flex;
   flex-direction: column;
+  /* width: 100%; */
   /* placeholder style */
-  /* background-color: pink; */
+  /* background-color: magenta; */
+  /* border: 5px mediumslateblue dotted; */
 }
 footer {
   /* placeholder style */
   /* background-color: orange; */
+}
+
+/* responsive app elements */
+@media only screen and (max-width: 750px) {
+  #root {
+    width: 100%;
+  }
 }

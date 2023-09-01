@@ -1,61 +1,44 @@
+/* form elements */
 .authForm {
-  margin: 1rem auto;
-  width: 90%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  /* placeholder style */
+  margin: 0 auto;
+  width: 50%;
+  padding: 1.5rem;
+  background-color: hsla(42, 70%, 94%, 0.5);
+  /* placeholder styles */
+  /* background-color: gray; */
   /* border: 5px blue dotted; */
-  /* background-color: rgba(0, 204, 153, 0.75); */
 }
-
-.authContainer {
-  background-color: magenta;
-  display: flex;
-  flex-direction: column;
-}
-
-.authNavLinksContainer {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  /* placeholder style */
-  /* background-color: pink; */
-}
-
 .authControlGroup {
   display: flex;
   flex-direction: column;
-  padding: 1rem 1.25rem;
-  /* placeholder style */
-  /* background-color: var(--lightNeutral); */
+  gap: 1.5rem;
+  margin-bottom: 1.75rem;
+  /* placeholder styles */
+  /* background-color: greenyellow; */
   /* border: 3px var(--darkNeutral) solid; */
 }
-
 .authControl {
-  /* give equal width to .control elements */
-  flex: 1;
-  /* stack display of elements */
   display: flex;
   flex-direction: column;
-  padding: 0.75rem 0;
-  /* padding: 14px 14px; */
   /* placeholder style */
-  /* background-color: coral; */
-  /* border: 5px purple dashed; */
+  /* border: 3px purple dotted; */
 }
-
-/* style input for spacing between label and error */
 .authInput {
-  margin: 5px 0;
-  padding: 0.5rem;
-  min-width: 400px;
-  height: 2rem;
-  border: 2px solid var(--darkNeutral);
   font-size: 1.25rem;
+  padding: 1rem;
+  /* for spacing between label and error */
+  width: 100%;
+  border: 2px solid var(--darkNeutral);
   background-color: var(--lightNeutral);
   /* placeholder style */
   /* background-color: cornflowerblue; */
+}
+
+.microCopy {
+  /* display: block; */
+  font-size: 0.75rem;
 }
 
 .errorMsg,
@@ -65,21 +48,20 @@
   /* border: 5px black dotted; */
 }
 
-.authErrorSummary {
-  padding: 1rem 0;
-}
-
 .authSubmitBtn {
-  /* color */
-  background-color: var(--darkNeutral);
-  color: var(--lightNeutral);
+  /* sizing & positioning */
+  padding: 1rem;
+  margin-top: 1rem;
+  align-self: flex-start;
   /* text */
   font-size: 1.25rem;
   font-weight: bold;
+  /* color */
+  background-color: var(--darkNeutral);
+  color: var(--lightNeutral);
   /* style */
   border: none;
-  /* sizing */
-  padding: 1rem;
+  border: 2px solid var(--darkNeutral);
 }
 .authSubmitBtn:hover,
 .authSubmitBtn:focus,
@@ -89,11 +71,27 @@
 }
 
 /* responsive form elements */
-@media only screen and (max-width: 550px) {
+@media only screen and (max-width: 800px) {
+  .authForm {
+    width: 90%;
+  }
   .authContainer {
     width: 100%;
   }
   .authControlGroup {
     flex-direction: column;
   }
+  .microCopy {
+    display: block;
+    font-size: 0.75rem;
+  }
+}
+
+/* TODO: move to Header.css */
+.authNavLinksContainer {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  /* placeholder style */
+  /* background-color: pink; */
 }
