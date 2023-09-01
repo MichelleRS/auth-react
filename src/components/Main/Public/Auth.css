@@ -23,19 +23,6 @@
   /* background-color: pink; */
 }
 
-.authNavLink {
-  padding: 1rem;
-  /* margin: 1rem; */
-  color: var(--darkNeutral);
-  border: 2px transparent solid;
-}
-
-.authNavLink.active {
-  border: 2px var(--darkNeutral) solid;
-  font-weight: bold;
-  text-decoration: none;
-}
-
 .authControlGroup {
   display: flex;
   flex-direction: column;

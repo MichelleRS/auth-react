@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
-import "./Auth.css";
+import "../Main/Public/Auth.css";
+import "./Header.css";
 
 export default function AuthToolbar() {
   const handleClick = () => {

@@ -1,51 +1,51 @@
-/* responsive header elements */
+/* header elements */
+/* responsive styles */
 @media only screen and (max-width: 550px) {
   header {
     flex-direction: column;
   }
 }
-
-/* header container */
-header {
-  display: flex;
-  /* add space between title and header links */
-  justify-content: space-between;
-  margin-bottom: 20px;
-  /* placeholder style */
-  /* background-color: rgba(51, 153, 255, 0.5); */
-  /* border: 5px navy dashed; */
-}
-
-/* title container and its header element */
 .headerTitle {
+  font-size: 2.5rem;
+  padding: 0.75rem;
   /* placeholder style */
   /* background-color: blue; */
 }
-header > h1 {
-  font-size: 50px;
-  text-align: left;
-}
 
-/* header links container and its link elements */
-.headerNavContainer {
-  text-align: center;
-  /* center header links vertically in header */
-  align-self: center;
+/* header elements for authorized users */
+.headerContainerUser {
   /* display as flex with gap between links */
   display: flex;
-  gap: 30px;
-  padding: 20px;
+  justify-content: space-between;
   /* placeholder style */
-  /* background-color: pink; */
-  /* border: 4px navy dotted; */
+  /* background-color: maroon; */
 }
-
-.headerNavContainer > a.active {
-  border: 2px var(--darkNeutral) solid;
+.headerNavUser {
+  text-align: center;
+  align-self: center;
+  padding: 0.75rem;
+  /* placeholder style */
+  /* background-color: yellow; */
 }
-
-.headerNavContainer > a {
+.headerNavUser > a {
   padding: 1rem;
   color: var(--darkNeutral);
   border: 2px transparent solid;
+}
+.headerNavUser > a:active,
+.headerNavUser > a:hover {
+  border: 2px var(--darkNeutral) solid;
+}
+
+/* header elements for users not signed in */
+.authNavLink {
+  padding: 1rem;
+  /* margin: 1rem; */
+  color: var(--darkNeutral);
+  border: 2px transparent solid;
+}
+.authNavLink.active {
+  border: 2px var(--darkNeutral) solid;
+  font-weight: bold;
+  text-decoration: none;
 }

@@ -1,7 +1,5 @@
 // import "./App.css";
 import "../../App.css";
-import { useAuth } from "../../context/AuthContext.jsx";
-import AuthToolbar from "./Public/AuthToolbar.jsx";
 import { Route, Routes } from "react-router-dom";
 import Layout from "./Public/Layout.jsx";
 import SignIn from "./Public/SignIn.jsx";
@@ -10,13 +8,8 @@ import Home from "./Protected/Home.jsx";
 import ProtectedRoute from "./Protected/ProtectedRoute.jsx";
 
 export default function Main() {
-  // get user
-  const { user } = useAuth();
-
   return (
     <main>
-      {/* if user, display sign in and sign out links */}
-      {!user && <AuthToolbar />}
       <Routes>
         <Route path="/" element={<Layout />}>
           {/* public routes */}
