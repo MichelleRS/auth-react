@@ -13,3 +13,27 @@
   background-color: rgba(255, 204, 153, 0.75);
   /* border: magenta 25px dotted; */
 }
+
+/* layout styles for header, main, footer */
+header {
+  margin-bottom: 20px;
+  display: flex;
+  /* center text vertically */
+  align-items: center;
+  /* add space between title and header links */
+  justify-content: space-between;
+  /* placeholder styles */
+  background-color: rgba(51, 153, 255, 0.5);
+  border: 5px navy dashed;
+}
+main {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  /* placeholder style */
+  background-color: pink;
+}
+footer {
+  /* placeholder style */
+  background-color: orange;
+}
