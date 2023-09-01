@@ -61,9 +61,8 @@ export default function SignUp() {
   };
 
   return (
-    <section className="authContainer">
-      <h2>Sign Up</h2>
-      <form onSubmit={handleSubmit}>
+    <>
+      <form onSubmit={handleSubmit} className="authForm">
         <div className="authControlGroup">
           {/* email */}
           <div className="authControl">
@@ -88,7 +87,8 @@ export default function SignUp() {
           {/* password */}
           <div className="authControl">
             <label htmlFor="signUpPassword">
-              Choose a password with at least 6 characters
+              Choose a password{" "}
+              <span className="microCopy">(6 characters or more)</span>
             </label>
             <input
               type="password"
@@ -118,6 +118,6 @@ export default function SignUp() {
           Submit
         </button>
       </form>
-    </section>
+    </>
   );
 }

@@ -65,9 +65,8 @@ export default function SignIn() {
   };
 
   return (
-    <section className="authContainer">
-      <h2>Sign In</h2>
-      <form onSubmit={handleSubmit}>
+    <>
+      <form onSubmit={handleSubmit} className="authForm">
         <div className="authControlGroup">
           {/* email */}
           <div className="authControl">
@@ -125,6 +124,6 @@ export default function SignIn() {
           Submit
         </button>
       </form>
-    </section>
+    </>
   );
 }

@@ -8,6 +8,7 @@
     "Helvetica Neue", sans-serif;
   line-height: 1.5;
   font-weight: 400;
+  font-size: 1.25rem;
   color: var(--darkNeutral);
 
   font-synthesis: none;
@@ -29,7 +30,7 @@ body {
   margin: 0;
   display: flex;
   /* place-items: center; */
-  min-width: 320px;
+  /* min-width: 320px; */
   min-height: 100vh;
   /* start of added styles */
   padding: 0;
