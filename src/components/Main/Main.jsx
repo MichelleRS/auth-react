@@ -14,7 +14,7 @@ export default function Main() {
   const { user } = useAuth();
 
   return (
-    <>
+    <main>
       {/* if user, display sign in and sign out links */}
       {!user && <AuthToolbar />}
       <Routes>
@@ -29,6 +29,6 @@ export default function Main() {
           {/* TODO catch all */}
         </Route>
       </Routes>
-    </>
+    </main>
   );
 }
