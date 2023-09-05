@@ -4,6 +4,10 @@
   header {
     flex-direction: column;
   }
+  /* display heading and nav elements vertically */
+  .headerContainerUser {
+    flex-direction: column;
+  }
 }
 .headerTitle {
   font-size: 2.5rem;
