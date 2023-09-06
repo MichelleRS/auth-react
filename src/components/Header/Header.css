@@ -2,11 +2,16 @@
 /* responsive styles */
 @media only screen and (max-width: 550px) {
   header {
+    /* flex-direction: column; */
+  }
+  .headerContainerUser {
+    /* display heading and nav elements vertically */
     flex-direction: column;
   }
-  /* display heading and nav elements vertically */
-  .headerContainerUser {
-    flex-direction: column;
+  .authNavLinksContainer {
+    width: 100%;
+    /* placeholder style */
+    /* border: 2px blue solid; */
   }
 }
 .headerTitle {
@@ -42,14 +47,33 @@
 }
 
 /* header elements for users not signed in */
+.headerContainerAuth {
+  margin: 0;
+  /* placeholder style */
+  /* background-color: maroon; */
+}
+.authNavLinksContainer {
+  width: 50%;
+  margin: 0 auto;
+  /* placeholder style */
+  display: flex;
+  justify-content: center;
+  /* border: 2px blue solid; */
+}
 .authNavLink {
+  color: var(--darkNeutral);
+  text-align: center;
   padding: 1rem;
   /* margin: 1rem; */
-  color: var(--darkNeutral);
-  border: 2px transparent solid;
+  width: 100%;
+  /* placeholder style */
+  /* background-color: coral; */
+  /* border: 2px transparent solid; */
 }
 .authNavLink.active {
-  border: 2px var(--darkNeutral) solid;
   font-weight: bold;
   text-decoration: none;
+  background-color: hsla(42, 70%, 94%, 0.5);
+  /* placeholder style */
+  /* border: 2px var(--lightNeutral) solid; */
 }
