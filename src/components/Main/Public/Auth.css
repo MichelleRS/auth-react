@@ -75,7 +75,7 @@
   .authForm {
     width: 90%;
     /* placeholder style */
-    background-color: pink;
+    /* background-color: pink; */
   }
   .authControlGroup {
     flex-direction: column;
