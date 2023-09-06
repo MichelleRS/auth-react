@@ -2,11 +2,16 @@
 /* responsive styles */
 @media only screen and (max-width: 550px) {
   header {
+    /* flex-direction: column; */
+  }
+  .headerContainerUser {
+    /* display heading and nav elements vertically */
     flex-direction: column;
   }
-  /* display heading and nav elements vertically */
-  .headerContainerUser {
-    flex-direction: column;
+  .headerAuthToolbar {
+    width: 100%;
+    /* placeholder style */
+    /* border: 2px blue solid; */
   }
 }
 .headerTitle {
@@ -42,14 +47,32 @@
 }
 
 /* header elements for users not signed in */
+.headerContainerAuth {
+  width: 100%;
+  margin: 0 auto;
+  /* placeholder style */
+  /* background-color: maroon; */
+}
+.headerAuthToolbar {
+  width: 50%;
+  margin: 0 auto;
+  display: flex;
+  /* placeholder style */
+  /* background-color: pink; */
+}
 .authNavLink {
-  padding: 1rem;
-  /* margin: 1rem; */
   color: var(--darkNeutral);
-  border: 2px transparent solid;
+  text-align: center;
+  padding: 1rem;
+  width: 100%;
+  /* placeholder style */
+  /* background-color: coral; */
+  /* border: 3px red dotted; */
 }
 .authNavLink.active {
-  border: 2px var(--darkNeutral) solid;
   font-weight: bold;
   text-decoration: none;
+  background-color: hsla(42, 70%, 94%, 0.5);
+  /* placeholder style */
+  /* border: 2px var(--lightNeutral) solid; */
 }

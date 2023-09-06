@@ -74,9 +74,8 @@
 @media only screen and (max-width: 800px) {
   .authForm {
     width: 90%;
-  }
-  .authContainer {
-    width: 100%;
+    /* placeholder style */
+    background-color: pink;
   }
   .authControlGroup {
     flex-direction: column;
@@ -85,13 +84,4 @@
     display: block;
     font-size: 0.75rem;
   }
-}
-
-/* TODO: move to Header.css */
-.authNavLinksContainer {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  /* placeholder style */
-  /* background-color: pink; */
 }
