@@ -8,7 +8,7 @@
     /* display heading and nav elements vertically */
     flex-direction: column;
   }
-  .authNavLinksContainer {
+  .headerAuthToolbar {
     width: 100%;
     /* placeholder style */
     /* border: 2px blue solid; */
@@ -48,27 +48,26 @@
 
 /* header elements for users not signed in */
 .headerContainerAuth {
-  margin: 0;
+  width: 100%;
+  margin: 0 auto;
   /* placeholder style */
   /* background-color: maroon; */
 }
-.authNavLinksContainer {
+.headerAuthToolbar {
   width: 50%;
   margin: 0 auto;
-  /* placeholder style */
   display: flex;
-  justify-content: center;
-  /* border: 2px blue solid; */
+  /* placeholder style */
+  /* background-color: pink; */
 }
 .authNavLink {
   color: var(--darkNeutral);
   text-align: center;
   padding: 1rem;
-  /* margin: 1rem; */
   width: 100%;
   /* placeholder style */
   /* background-color: coral; */
-  /* border: 2px transparent solid; */
+  /* border: 3px red dotted; */
 }
 .authNavLink.active {
   font-weight: bold;

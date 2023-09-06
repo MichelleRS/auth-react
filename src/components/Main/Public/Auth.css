@@ -85,13 +85,3 @@
     font-size: 0.75rem;
   }
 }
-
-/* TODO: move to Header.css */
-.authNavLinksContainer {
-  /* display: flex; */
-  /* justify-content: center; */
-  /* remove gap */
-  /* gap: 2rem; */
-  /* placeholder style */
-  /* background-color: pink; */
-}
