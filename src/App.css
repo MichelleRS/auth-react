@@ -36,9 +36,4 @@ footer {
   /* background-color: orange; */
 }
 
-/* responsive app elements */
-@media only screen and (max-width: 750px) {
-  #root {
-    width: 100%;
-  }
-}
+/* responsive elements moved to index.css */

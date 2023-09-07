@@ -40,3 +40,49 @@ body {
   background: url("/src/assets/itysl-robert-palins.avif") no-repeat;
   background-size: cover;
 }
+
+/* responsive styles */
+/* laptop */
+@media only screen and (max-width: 1280px) {
+  .authForm,
+  .headerAuthToolbar {
+    width: 80%;
+  }
+}
+/* tablet */
+@media only screen and (max-width: 800px) {
+  #root {
+    width: 100%;
+  }
+  .headerContainerUser {
+    /* display heading and nav elements vertically */
+    flex-direction: column;
+  }
+  .headerAuthToolbar {
+    width: 100%;
+    /* placeholder style */
+    /* border: 2px blue solid; */
+  }
+  .authForm {
+    width: 100%;
+    /* placeholder style */
+    /* background-color: pink; */
+  }
+}
+/* mobile */
+@media only screen and (max-width: 480px) {
+  .headerTitle {
+    font-size: 1.75rem;
+    /* placeholder style */
+    /* background-color: blue; */
+  }
+  .authForm {
+    /* width: 100%; */
+    padding: 1rem;
+    /* placeholder styles */
+    /* border: 5px blue dotted; */
+  }
+  .microCopy {
+    display: block;
+  }
+}
