@@ -38,7 +38,7 @@
   /* placeholder style */
   /* background-color: maroon; */
 }
-.headerAuthToolbar {
+.authNavContainer {
   width: 50%;
   margin: 0 auto;
   display: flex;

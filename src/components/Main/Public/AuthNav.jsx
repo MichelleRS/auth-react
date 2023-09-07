@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 
 export default function AuthNav() {
   return (
-    <div className="headerAuthToolbar">
+    <div className="authNavContainer">
       <NavLink to="/sign-in" className="authNavLink">
         Sign In
       </NavLink>

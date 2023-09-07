@@ -34,7 +34,7 @@ export default function Header() {
       {!user && (
         <div className="headerContainerAuth">
           <h1 className="headerTitle">Auth Template</h1>
-          <div className="headerAuthToolbar">
+          <div className="authNavContainer">
             <AuthToolbar />
           </div>
         </div>

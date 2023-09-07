@@ -1,3 +1,4 @@
+// TODO remove Auth.jsx
 import { useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 import SignIn from "./SignIn.jsx";

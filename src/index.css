@@ -45,7 +45,7 @@ body {
 /* laptop */
 @media only screen and (max-width: 1280px) {
   .authForm,
-  .headerAuthToolbar {
+  .authNavContainer {
     width: 80%;
   }
 }
@@ -58,7 +58,7 @@ body {
     /* display heading and nav elements vertically */
     flex-direction: column;
   }
-  .headerAuthToolbar {
+  .authNavContainer {
     width: 100%;
     /* placeholder style */
     /* border: 2px blue solid; */
