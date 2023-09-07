@@ -6,7 +6,7 @@ export default function ProtectedRoute() {
   const { user } = useAuth();
   // if not a user, navigate to account page
   if (!user) {
-    return <Navigate to="/account" />;
+    return <Navigate to="/sign-in" />;
   }
 
   return <Outlet />;
