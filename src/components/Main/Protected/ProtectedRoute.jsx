@@ -1,18 +1,13 @@
-import { Navigate, Outlet, useLocation } from "react-router-dom";
+import { Navigate, Outlet } from "react-router-dom";
 import { useAuth } from "../../../context/AuthContext.jsx";
 
 export default function ProtectedRoute() {
   // get user data
   const { user } = useAuth();
-  const location = useLocation();
+  // if not a user, navigate to account page
+  if (!user) {
+    return <Navigate to="/account" />;
+  }
 
-  return (
-    // if user, send to Outlet
-    // if not a user, send to Account
-    user?.user ? (
-      <Outlet />
-    ) : (
-      <Navigate to="/account" state={{ from: location }} replace />
-    )
-  );
+  return <Outlet />;
 }
