@@ -70,18 +70,4 @@
   color: var(--darkNeutral);
 }
 
-/* responsive form elements */
-@media only screen and (max-width: 800px) {
-  .authForm {
-    width: 90%;
-    /* placeholder style */
-    /* background-color: pink; */
-  }
-  .authControlGroup {
-    flex-direction: column;
-  }
-  .microCopy {
-    display: block;
-    font-size: 0.75rem;
-  }
-}
+/* moved responsive styles to index.css */

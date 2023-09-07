@@ -1,26 +1,11 @@
 /* header elements */
-/* responsive styles */
-@media only screen and (max-width: 550px) {
-  header {
-    /* flex-direction: column; */
-  }
-  .headerContainerUser {
-    /* display heading and nav elements vertically */
-    flex-direction: column;
-  }
-  .headerAuthToolbar {
-    width: 100%;
-    /* placeholder style */
-    /* border: 2px blue solid; */
-  }
-}
+/* moved responsive styles to index.css */
 .headerTitle {
   font-size: 2.5rem;
   padding: 0.75rem;
   /* placeholder style */
   /* background-color: blue; */
 }
-
 /* header elements for authorized users */
 .headerContainerUser {
   /* display as flex with gap between links */
