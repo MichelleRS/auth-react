@@ -77,10 +77,20 @@ body {
     /* background-color: blue; */
   }
   .authForm {
-    /* width: 100%; */
     padding: 1rem;
     /* placeholder styles */
     /* border: 5px blue dotted; */
+  }
+  .authInput {
+    padding: 0.5rem;
+    /* placeholder style */
+    /* background-color: cornflowerblue; */
+  }
+  .authSubmitBtn {
+    /* sizing & positioning */
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    width: 100%;
   }
   .microCopy {
     display: block;
