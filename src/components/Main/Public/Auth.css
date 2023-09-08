@@ -53,26 +53,21 @@
 .authInput {
   font-size: 1.25rem;
   padding: 1rem;
-  /* for spacing between label and error */
   width: 100%;
   border: 2px solid var(--darkNeutral);
   background-color: var(--lightNeutral);
   /* placeholder style */
   /* background-color: cornflowerblue; */
 }
-
 .microCopy {
-  /* display: block; */
   font-size: 0.75rem;
 }
-
 .errorMsg,
 .authErrorSummary {
   color: var(--red);
   /* placeholder style */
   /* border: 5px black dotted; */
 }
-
 .authSubmitBtn {
   /* sizing & positioning */
   padding: 1rem;
@@ -94,5 +89,3 @@
   background-color: var(--lightNeutral);
   color: var(--darkNeutral);
 }
-
-/* moved responsive styles to index.css */

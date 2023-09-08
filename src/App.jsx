@@ -12,10 +12,10 @@ function App() {
       <Routes>
         {/* set root path to Layout component */}
         <Route path="/" element={<Layout />}>
-          {/* public routes */}
+          {/* public routes: accessible to all visitors */}
           <Route path="sign-in" element={<SignIn />} />
           <Route path="sign-up" element={<SignUp />} />
-          {/* protected routes */}
+          {/* protected routes: if not an auth user, cannot access these routes */}
           <Route element={<ProtectedRoute />}>
             <Route path="/" element={<Home />} />
           </Route>

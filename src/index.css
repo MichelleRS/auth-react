@@ -29,13 +29,10 @@
 body {
   margin: 0;
   display: flex;
-  /* place-items: center; */
-  /* min-width: 320px; */
   min-height: 100vh;
-  /* start of added styles */
   padding: 0;
   height: 100%;
-  /* start of placeholder styles */
+  /* placeholder styles */
   /* image credit: screen rant */
   background: url("/src/assets/itysl-robert-palins.avif") no-repeat;
   background-size: cover;

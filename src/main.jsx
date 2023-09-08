@@ -10,6 +10,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <BrowserRouter>
       <AuthProvider>
         <Routes>
+          {/* "*" used to handle nested routes inside of the App */}
           <Route path="/*" element={<App />} />
         </Routes>
       </AuthProvider>
