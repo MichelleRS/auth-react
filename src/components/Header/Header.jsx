@@ -17,17 +17,15 @@ export default function Header() {
   };
 
   return (
-    <header>
+    <header className="headerContainer">
       <h1 className="headerTitle">Auth Template</h1>
       {/* if user, render sign out link */}
       {/* TODO update class names */}
       {user && (
-        <div className="headerContainerUser">
-          <div className="headerNavUser">
-            <Link to="/sign-in" onClick={handleSignOut}>
-              Sign Out
-            </Link>
-          </div>
+        <div className="headerSignOut">
+          <Link to="/sign-in" onClick={handleSignOut}>
+            Sign Out
+          </Link>
         </div>
       )}
     </header>
