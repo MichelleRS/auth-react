@@ -29,13 +29,10 @@
 body {
   margin: 0;
   display: flex;
-  /* place-items: center; */
-  /* min-width: 320px; */
   min-height: 100vh;
-  /* start of added styles */
   padding: 0;
   height: 100%;
-  /* start of placeholder styles */
+  /* placeholder styles */
   /* image credit: screen rant */
   background: url("/src/assets/itysl-robert-palins.avif") no-repeat;
   background-size: cover;
@@ -45,7 +42,7 @@ body {
 /* laptop */
 @media only screen and (max-width: 1280px) {
   .authForm,
-  .headerAuthToolbar {
+  .authNavContainer {
     width: 80%;
   }
 }
@@ -54,11 +51,11 @@ body {
   #root {
     width: 100%;
   }
-  .headerContainerUser {
+  .headerContainer {
     /* display heading and nav elements vertically */
     flex-direction: column;
   }
-  .headerAuthToolbar {
+  .authNavContainer {
     width: 100%;
     /* placeholder style */
     /* border: 2px blue solid; */

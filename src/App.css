@@ -10,8 +10,8 @@
   width: 70%;
   /* center the app container */
   margin: 0 auto;
-  /* placeholder styles */
   background-color: rgba(255, 204, 153, 0.75);
+  /* placeholder styles */
   /* border: magenta 25px dotted; */
 }
 
@@ -35,5 +35,3 @@ footer {
   /* placeholder style */
   /* background-color: orange; */
 }
-
-/* responsive elements moved to index.css */

@@ -1,3 +1,28 @@
+/* navigation */
+.authNavContainer {
+  width: 50%;
+  margin: 0 auto;
+  display: flex;
+  /* placeholder style */
+  /* background-color: pink; */
+}
+.authNavLink {
+  color: var(--darkNeutral);
+  text-align: center;
+  padding: 1rem;
+  width: 100%;
+  /* placeholder style */
+  /* background-color: coral; */
+  /* border: 3px red dotted; */
+}
+.authNavLink.active {
+  font-weight: bold;
+  text-decoration: none;
+  background-color: hsla(42, 70%, 94%, 0.5);
+  /* placeholder style */
+  /* border: 2px var(--lightNeutral) solid; */
+}
+
 /* form elements */
 .authForm {
   display: flex;
@@ -28,26 +53,21 @@
 .authInput {
   font-size: 1.25rem;
   padding: 1rem;
-  /* for spacing between label and error */
   width: 100%;
   border: 2px solid var(--darkNeutral);
   background-color: var(--lightNeutral);
   /* placeholder style */
   /* background-color: cornflowerblue; */
 }
-
 .microCopy {
-  /* display: block; */
   font-size: 0.75rem;
 }
-
 .errorMsg,
 .authErrorSummary {
   color: var(--red);
   /* placeholder style */
   /* border: 5px black dotted; */
 }
-
 .authSubmitBtn {
   /* sizing & positioning */
   padding: 1rem;
@@ -69,5 +89,3 @@
   background-color: var(--lightNeutral);
   color: var(--darkNeutral);
 }
-
-/* moved responsive styles to index.css */

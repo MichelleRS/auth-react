@@ -1,63 +1,29 @@
 /* header elements */
-/* moved responsive styles to index.css */
+.headerContainer {
+  display: flex;
+  justify-content: space-between;
+  /* placeholder style */
+  /* background-color: maroon; */
+}
 .headerTitle {
   font-size: 2.5rem;
   padding: 0.75rem;
   /* placeholder style */
   /* background-color: blue; */
 }
-/* header elements for authorized users */
-.headerContainerUser {
-  /* display as flex with gap between links */
-  display: flex;
-  justify-content: space-between;
-  /* placeholder style */
-  /* background-color: maroon; */
-}
-.headerNavUser {
+.headerSignOut {
   text-align: center;
   align-self: center;
   padding: 0.75rem;
   /* placeholder style */
   /* background-color: yellow; */
 }
-.headerNavUser > a {
+.headerSignOut > a {
   padding: 1rem;
   color: var(--darkNeutral);
   border: 2px transparent solid;
 }
-.headerNavUser > a:active,
-.headerNavUser > a:hover {
+.headerSignOut > a:active,
+.headerSignOut > a:hover {
   border: 2px var(--darkNeutral) solid;
-}
-
-/* header elements for users not signed in */
-.headerContainerAuth {
-  width: 100%;
-  margin: 0 auto;
-  /* placeholder style */
-  /* background-color: maroon; */
-}
-.headerAuthToolbar {
-  width: 50%;
-  margin: 0 auto;
-  display: flex;
-  /* placeholder style */
-  /* background-color: pink; */
-}
-.authNavLink {
-  color: var(--darkNeutral);
-  text-align: center;
-  padding: 1rem;
-  width: 100%;
-  /* placeholder style */
-  /* background-color: coral; */
-  /* border: 3px red dotted; */
-}
-.authNavLink.active {
-  font-weight: bold;
-  text-decoration: none;
-  background-color: hsla(42, 70%, 94%, 0.5);
-  /* placeholder style */
-  /* border: 2px var(--lightNeutral) solid; */
 }

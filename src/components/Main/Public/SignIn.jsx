@@ -2,6 +2,7 @@ import { useRef, useState, useEffect } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
 import { useAuth } from "../../../context/AuthContext.jsx";
 import "./Auth.css";
+import AuthNav from "./AuthNav.jsx";
 
 export default function SignIn() {
   // constants for use in function
@@ -65,7 +66,8 @@ export default function SignIn() {
   };
 
   return (
-    <>
+    <div className="signInContainer">
+      <AuthNav />
       <form onSubmit={handleSubmit} className="authForm">
         <div className="authControlGroup">
           {/* email */}
@@ -124,6 +126,6 @@ export default function SignIn() {
           Submit
         </button>
       </form>
-    </>
+    </div>
   );
 }
